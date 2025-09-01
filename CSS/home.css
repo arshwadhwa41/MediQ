@@ -1,0 +1,315 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.navbar a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #0077cc;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #00b386;
+}
+
+.logo {
+  height: 40px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+  background: linear-gradient(120deg, #1e90ff, #32cd32);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+.subtext {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Search Section */
+.search-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.search-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+#city-search {
+  padding: 14px 20px;
+  width: 500px; /* 🔥 bigger width */
+  border: 3px solid transparent;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  transition: all 0.4s ease;
+  background-image: linear-gradient(white, white),
+                    linear-gradient(90deg, #1e90ff, #32cd32); /* gradient border */
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+#city-search:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(30,144,255,0.6),
+              0 0 20px rgba(50,205,50,0.5);
+}
+
+.suggestions {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+  background: #fff;
+  max-width: 500px; /* match search bar */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.suggestions li {
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.suggestions li:hover {
+  background: #f0f0f0;
+}
+
+/* Health Section */
+/* ========== Health Section ========== */
+.health-section {
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Gradient background animation */
+.health-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(270deg, #1e90ff, #32cd32, #00bfff, #00b386);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  z-index: -1;
+  opacity: 0.95;
+  border-radius: 0 0 20px 20px;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.health-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.25);
+}
+
+/* Grid layout */
+.health-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Card styling with image as background */
+.health-card {
+  position: relative;
+  height: 280px;
+  border-radius: 10%;
+  overflow: hidden;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Overlay for issue name */
+.health-card::after {
+  content: attr(data-issue-name);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 15px 10px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+  transition: background 0.3s ease;
+}
+
+/* Hover effects */
+.health-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+}
+.health-card:hover::after {
+  background: rgba(0,0,0,0.7);
+}
+
+/* Hide default <img> and <p> inside card */
+.health-card img,
+.health-card p {
+  display: none;
+}
+
+
+/* Modal */
+/* ===== MODAL BACKDROP ===== */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.6); /* dim background */
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ===== MODAL BOX ===== */
+.modal-content {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: zoomIn 0.3s ease;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.close:hover {
+  color: #ff4d4d;
+  transform: scale(1.2);
+}
+
+/* Title */
+#modal-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0d6efd;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Section headers */
+.modal-content h3 {
+  font-size: 1.3rem;
+  margin: 15px 0 10px;
+  color: #198754;
+  border-bottom: 2px solid #198754;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+
+/* Precautions list */
+#modal-precautions li {
+  list-style: none;
+  margin: 8px 0;
+  padding: 10px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+#modal-precautions li:hover {
+  transform: translateX(8px);
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+/* Treatment text */
+#modal-treatment {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  background: #f8f9fa;
+  padding: 15px;
+  border-left: 4px solid #0d6efd;
+  border-radius: 8px;
+  animation: fadeSlideUp 0.5s ease;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Footer */
+.footer {
+  background: #1e90ff;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}

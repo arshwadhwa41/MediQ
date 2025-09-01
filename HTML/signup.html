@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediQ — Sign Up</title>
+
+  <!-- ✅ Correct relative CSS path -->
+  <link rel="stylesheet" href="../CSS/signup.css" />
+</head>
+<body>
+  <main class="login-page">
+
+    <!-- BACKGROUND SLIDESHOW -->
+    <div class="slideshow">
+      <img src="../ASSETS/login_1.png" alt="bg1">
+      <img src="../ASSETS/login_2.png" alt="bg2">
+      <img src="../ASSETS/login_3.png" alt="bg3">
+      <img src="../ASSETS/login_4.png" alt="bg4">
+      <img src="../ASSETS/login_5.png" alt="bg5">
+      <img src="../ASSETS/login_6.png" alt="bg6">
+    </div>
+
+    <!-- BRAND -->
+    <div class="brand">
+      <img src="../ASSETS/MediQ_Logo.png" alt="MediQ Logo" class="brand__logo"/>
+      <div class="brand__text">
+        <span class="brand__name">MediQ</span>
+        <span class="brand__tagline">Your Health, Our Priority</span>
+      </div>
+    </div>
+
+    <!-- SIGNUP CARD -->
+    <section class="card">
+      <header class="card__header">
+        <h1 class="card__title">Create your account</h1>
+        <p class="card__subtitle">Sign up to start booking OPD appointments.</p>
+      </header>
+
+      <form class="form" id="signup-form">
+        <div class="field">
+          <input type="text" id="name" required placeholder="Full Name" />
+        </div>
+
+        <div class="field">
+          <input type="email" id="email" required placeholder="Email address" />
+        </div>
+
+        <div class="field">
+          <input type="password" id="password" required minlength="6" placeholder="Password" />
+        </div>
+
+        <div class="field">
+          <input type="password" id="confirm-password" required minlength="6" placeholder="Confirm Password" />
+        </div>
+
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ✅ Correct relative JS path -->
+  <script type="module" src="../JS/signup.js"></script>
+</body>
+</html>

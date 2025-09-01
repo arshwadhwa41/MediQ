@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediQ - Outer Page</title>
+  <!-- ✅ Correct CSS link -->
+  <link rel="stylesheet" href="../CSS/outer.css">
+</head>
+<body>
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero">
+    <!-- Top: Animated Tagline -->
+    <div class="hero-top fade-slide-down">
+      <div class="hero-tagline">
+        <span id="tagline-text"></span>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="hero-content">
+      <!-- Left: Text & Buttons -->
+      <div class="hero-text fade-slide-left">
+        <h1>Book Your OPD Appointments Online</h1>
+        <p>Skip the queues, find top hospitals near you, and reserve your slot instantly.</p>
+        <div class="hero-buttons">
+          <!-- ✅ Correct relative links -->
+          <button class="btn-login" onclick="window.location.href='../HTML/login.html'">Login</button>
+          <button class="btn-signup" onclick="window.location.href='../HTML/signup.html'">Sign Up</button>
+        </div>
+      </div>
+
+      <!-- Right: Doctor Image with Flip Effect -->
+      <div class="hero-image fade-slide-right">
+        <div class="image-flip">
+          <div class="flip-inner">
+            <!-- Front -->
+            <div class="flip-front">
+              <img src="../ASSETS/doctor_interaction.png" 
+                   alt="Doctor with Patient" class="flip-img">
+            </div>
+            <!-- Back -->
+            <div class="flip-back">
+              <img src="../ASSETS/MediQ_Logo.png" 
+                   alt="MediQ Logo" class="flip-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-overlay">
+      <!-- Services Grid -->
+      <h2 class="footer-heading">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">✔ Online OPD Appointment Booking</div>
+        <div class="service-card">✔ Quick Token Generation</div>
+        <div class="service-card">✔ Real-time Hospital Availability</div>
+        <div class="service-card">✔ Health & Wellness Tips</div>
+        <div class="service-card">✔ Digital Prescription Storage</div>
+        <div class="service-card">✔ Lab Test Bookings</div>
+        <div class="service-card">✔ Emergency Assistance</div>
+        <div class="service-card">✔ Doctor Consultation Reminders</div>
+        <div class="service-card">✔ 24/7 Hospitals Available</div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-box">
+        <h2>Get in Touch</h2>
+        <p><strong>Email:</strong> info@mediq.com</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Address:</strong> MediQ HQ, Chandigarh, India</p>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 MediQ. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ✅ Correct JS link -->
+  <script src="../JS/outer.js" defer></script>
+</body>
+</html>

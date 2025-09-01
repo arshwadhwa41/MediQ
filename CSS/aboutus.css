@@ -1,0 +1,83 @@
+/* Background Gradient Animation */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(270deg, #1e90ff, #32cd32, #00c6ff);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: #fff;
+  text-align: center;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hero */
+.hero {
+  padding: 40px 20px 20px;
+}
+
+.logo {
+  width: 220px;
+  border-radius: 50%;
+  animation: logoPulse 3s infinite ease-in-out;
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #00c6ff); }
+  50% { transform: scale(1.1); filter: drop-shadow(0 0 15px #32cd32); }
+}
+
+.tagline {
+  font-size: 2.5rem;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* About Section */
+.about-section {
+  flex: 1;
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.about-section p {
+  margin-bottom: 25px;
+}
+
+.highlight {
+  color: #00ffb3;
+  font-weight: bold;
+}
+
+.founder {
+  margin-top: 40px;
+  font-size: 1.1rem;
+}
+
+.founder-name {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #00ffea;
+  text-shadow: 0 0 10px rgba(0,255,200,0.6);
+}
+
+/* Footer */
+.footer {
+  padding: 15px;
+  background: rgba(0,0,0,0.25);
+  font-size: 0.9rem;
+}

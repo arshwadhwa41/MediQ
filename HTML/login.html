@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediQ — Login</title>
+  <!-- ✅ Correct CSS link -->
+  <link rel="stylesheet" href="../CSS/login.css" />
+</head>
+<body>
+  <!-- ================= PAGE WRAPPER ================= -->
+  <main class="login-page">
+
+    <!-- BACKGROUND SLIDESHOW -->
+    <div class="slideshow">
+      <img src="../ASSETS/login_1.png" alt="bg1">
+      <img src="../ASSETS/login_2.png" alt="bg2">
+      <img src="../ASSETS/login_3.png" alt="bg3">
+      <img src="../ASSETS/login_4.png" alt="bg4">
+      <img src="../ASSETS/login_5.png" alt="bg5">
+      <img src="../ASSETS/login_6.png" alt="bg6">
+    </div>
+
+    <!-- BRAND (Side) -->
+    <div class="brand">
+      <img src="../ASSETS/MediQ_Logo.png" alt="MediQ Logo" class="brand__logo"/>
+      <div class="brand__text">
+        <span class="brand__name">MediQ</span>
+        <span class="brand__tagline">Your Health, Our Priority</span>
+      </div>
+    </div>
+
+    <!-- LOGIN CARD -->
+    <section class="card">
+      <header class="card__header">
+        <h1 class="card__title">Welcome back</h1>
+        <p class="card__subtitle">Log in to continue booking OPD appointments.</p>
+      </header>
+
+      <div class="social">
+        <button class="btn btn--social" id="btn-google">
+          <span class="icon">G</span> Continue with Google
+        </button>
+        <button class="btn btn--social" id="btn-apple">
+          <span class="icon"></span> Continue with Apple
+        </button>
+      </div>
+
+      <div class="divider"><span>or</span></div>
+
+      <form class="form" id="login-form" novalidate>
+        <div class="field">
+          <input type="email" id="email" class="input" required placeholder=" " />
+          <label for="email" class="label">Email address</label>
+          <small class="error" id="email-error"></small>
+        </div>
+
+        <div class="field field--password">
+          <input type="password" id="password" class="input" required minlength="6" placeholder=" " />
+          <label for="password" class="label">Password</label>
+          <button type="button" class="toggle" id="toggle-password">👁</button>
+          <small class="error" id="password-error"></small>
+        </div>
+
+        <div class="options">
+          <a href="#" class="link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn--primary" id="btn-login">Log in</button>
+      </form>
+
+      <footer class="card__footer">
+        <span>New to MediQ?</span>
+        <a href="../HTML/signup.html" class="link">Create an account</a>
+      </footer>
+    </section>
+  </main>
+
+  <!-- ✅ Correct JS link -->
+  <script type="module" src="../JS/login.js"></script>
+</body>
+</html>

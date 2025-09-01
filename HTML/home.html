@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediQ - Home</title>
+  <link rel="stylesheet" href="../CSS/home.css">
+</head>
+<body>
+  <!-- ================ NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="../HTML/login.html">Login</a>
+      <a href="../HTML/signup.html">Signup</a>
+      <a href="../HTML/aboutus.html">About Us</a>
+    </div>
+    <div class="nav-right">
+      <a href="../HTML/outer.html">
+        <img src="../ASSETS/MediQ_Logo.png" alt="MediQ Logo" class="logo">
+      </a>
+    </div>
+  </nav>
+
+  <!-- ================ HERO / TAGLINE ================= -->
+  <header class="hero">
+    <h1 id="tagline-text"></h1>
+    <p class="subtext">Find hospitals near you & book appointments instantly.</p>
+  </header>
+
+  <!-- ================ CITY SEARCH ================= -->
+  <section class="search-section">
+    <h2>Search Your City</h2>
+    <input type="text" id="city-search" placeholder="Type your city...">
+    <ul id="city-suggestions" class="suggestions"></ul>
+  </section>
+
+  <!-- ================ HEALTH ISSUES ================= -->
+<section class="health-section">
+  <h2>Common Health Issues</h2>
+  <div class="health-grid">
+
+    <div class="health-card" 
+         style="background-image: url('../ASSETS/health_1.png');" 
+         data-issue="teeth" 
+         data-issue-name="Teeth Pain">
+    </div>
+
+    <div class="health-card" 
+         style="background-image: url('../ASSETS/health_2.png');" 
+         data-issue="stomach" 
+         data-issue-name="Stomach Pain">
+    </div>
+
+    <div class="health-card" 
+         style="background-image: url('../ASSETS/health_3.png');" 
+         data-issue="cold" 
+         data-issue-name="Common Cold">
+    </div>
+
+    <div class="health-card" 
+         style="background-image: url('../ASSETS/health_4.png');" 
+         data-issue="headache" 
+         data-issue-name="Headache">
+    </div>
+
+    <div class="health-card" 
+         style="background-image: url('../ASSETS/health_5.png');" 
+         data-issue="fever" 
+         data-issue-name="Fever">
+    </div>
+
+    <div class="health-card" 
+         style="background-image: url('../ASSETS/health_6.png');" 
+         data-issue="acidity" 
+         data-issue-name="Acidity">
+    </div>
+
+  </div>
+</section>
+
+  <!-- ================ MODAL ================= -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <h3>Precautions:</h3>
+      <ul id="modal-precautions"></ul>
+      <h3>Treatment:</h3>
+      <p id="modal-treatment"></p>
+    </div>
+  </div>
+
+  <!-- ================ FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2025 MediQ | Stay Healthy, Stay Safe 💙</p>
+  </footer>
+
+  <script src="../JS/home.js"></script>
+</body>
+</html>

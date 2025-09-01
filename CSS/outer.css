@@ -1,0 +1,232 @@
+:root {
+  --blue: #1e66ff;
+  --green: #2fbf4a;
+  --dark: #0e1b2d;
+  --light: #f8faff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e3f0ff, #ffffff);
+  color: var(--dark);
+}
+
+/* Page load animation (default hidden) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Keyframes for smooth entry */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-tagline {
+  font-size: 44px;
+  font-weight: bold;
+  color: var(--blue);
+  border-right: 3px solid var(--blue);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink-caret 0.7s step-end infinite;
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--blue); }
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 40px;
+}
+.hero-text h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+.hero-text p {
+  margin-bottom: 20px;
+  color: #444;
+}
+.hero-buttons button {
+  border: none;
+  padding: 10px 18px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.btn-login {
+  background: transparent;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+}
+.btn-login:hover {
+  background: var(--blue);
+  color: white;
+}
+.btn-signup {
+  background: var(--blue);
+  color: white;
+}
+.btn-signup:hover {
+  background: var(--green);
+}
+
+/* ================== FLIP IMAGE ================== */
+.image-flip {
+  perspective: 1000px;
+  width: 450px;       /* doctor image width */
+  height: 320px;      /* rectangle height */
+}
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+.image-flip:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.flip-front { background: #fff; }
+.flip-back {
+  background: #fff;
+  transform: rotateY(180deg);
+}
+.flip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================== FOOTER ================== */
+.footer {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f0ff, #ffffff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+/* Overlay */
+.footer-overlay {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+/* Heading */
+.footer-heading {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: var(--blue);
+  animation: fade-down 1s ease forwards;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fly-up 0.8s ease forwards;
+}
+
+.service-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Contact Box */
+.contact-box {
+  margin-top: 60px;
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fade-up 1s ease forwards;
+}
+
+/* Footer Copy */
+.footer-copy {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Animations */
+@keyframes fly-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

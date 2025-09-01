@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediQ — Book Appointment</title>
+  
+  <!-- ✅ Correct relative CSS path -->
+  <link rel="stylesheet" href="../CSS/bookings.css" />
+</head>
+<body>
+  <!-- =================== TOP STRIP / TAGLINE =================== -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <!-- COMMENT: Animated tagline that keeps cycling -->
+      <h1 id="tagline-text" aria-live="polite"></h1>
+
+      <!-- COMMENT: Chosen hospital appears here (from URL ?hospital=...) -->
+      <div class="chosen-hospital">
+        <span class="chip">Hospital: <strong id="chosenHospital">—</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- =================== MAIN WRAPPER =================== -->
+  <main class="container">
+    <!-- COMMENT: Main booking card with two columns -->
+    <section class="card">
+      <!-- Left: Form -->
+      <form id="bookingForm" class="form" novalidate>
+        <h2 class="section-title">Patient Details</h2>
+
+        <div class="grid">
+          <!-- Name -->
+          <div class="field">
+            <input type="text" id="name" class="input" required placeholder=" " />
+            <label for="name" class="label">Full Name*</label>
+            <small class="error" data-for="name"></small>
+          </div>
+
+          <!-- Father/Husband Name -->
+          <div class="field">
+            <input type="text" id="guardian" class="input" required placeholder=" " />
+            <label for="guardian" class="label">Father/Husband Name*</label>
+            <small class="error" data-for="guardian"></small>
+          </div>
+
+          <!-- Phone -->
+          <div class="field">
+            <input type="tel" id="phone" class="input" required placeholder=" " pattern="^[0-9]{10}$" />
+            <label for="phone" class="label">Phone Number (10 digits)*</label>
+            <small class="error" data-for="phone"></small>
+          </div>
+
+          <!-- Sex -->
+          <div class="field">
+            <select id="sex" class="input select" required>
+              <option value="" disabled selected>Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+            <label for="sex" class="label label--select">Sex*</label>
+            <small class="error" data-for="sex"></small>
+          </div>
+
+          <!-- Age -->
+          <div class="field">
+            <input type="number" id="age" class="input" required placeholder=" " min="0" max="120" />
+            <label for="age" class="label">Age*</label>
+            <small class="error" data-for="age"></small>
+          </div>
+
+          <!-- Address -->
+          <div class="field field--full">
+            <textarea id="address" class="input textarea" required placeholder=" " rows="3"></textarea>
+            <label for="address" class="label">Full Address*</label>
+            <small class="error" data-for="address"></small>
+          </div>
+        </div>
+
+        <h2 class="section-title">Schedule</h2>
+        <div class="grid">
+          <!-- Date (calendar popup) -->
+          <div class="field">
+            <input type="date" id="date" class="input" required placeholder=" " />
+            <label for="date" class="label">Preferred Date*</label>
+            <small class="error" data-for="date"></small>
+          </div>
+
+          <!-- Time (restricted 10:00–17:00) -->
+          <div class="field">
+            <input type="time" id="time" class="input" required placeholder=" " min="10:00" max="17:00" step="900"/>
+            <label for="time" class="label">Preferred Time (10:00–17:00)*</label>
+            <small class="error" data-for="time"></small>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="actions">
+          <button type="submit" class="btn btn--primary">Book Appointment</button>
+          <button type="reset" class="btn btn--ghost">Reset</button>
+        </div>
+      </form>
+
+      <!-- Right: Live Review panel -->
+      <aside class="review">
+        <h3>Review & Confirm</h3>
+        <ul class="review-list">
+          <li><span>Hospital</span><strong id="r-hospital">—</strong></li>
+          <li><span>Patient</span><strong id="r-name">—</strong></li>
+          <li><span>Guardian</span><strong id="r-guardian">—</strong></li>
+          <li><span>Phone</span><strong id="r-phone">—</strong></li>
+          <li><span>Sex</span><strong id="r-sex">—</strong></li>
+          <li><span>Age</span><strong id="r-age">—</strong></li>
+          <li class="addr"><span>Address</span><strong id="r-address">—</strong></li>
+          <li><span>Date</span><strong id="r-date">—</strong></li>
+          <li><span>Time</span><strong id="r-time">—</strong></li>
+        </ul>
+        <div class="note">Please verify your details before booking.</div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Success toast (shown after submit) -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div class="toast__inner">
+      <span class="tick">✔</span>
+      <div>
+        <strong>Appointment Request Sent!</strong>
+        <div id="toastText">We’ll confirm shortly.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Correct relative JS path -->
+  <script src="../JS/bookings.js" defer></script>
+</body>
+</html>

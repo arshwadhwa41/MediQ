@@ -1,0 +1,212 @@
+:root {
+  --blue: #1e66ff;
+  --dark: #0e1b2d;
+  --light: #f8faff;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: var(--light);
+  overflow: hidden;
+}
+
+/* PAGE WRAPPER */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* SLIDESHOW BACKGROUND */
+.slideshow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9%;   /* 🔹 Rounded corners added */
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideShow 25s infinite;  /* 🔹 infinite loop */
+}
+
+/* Add delays for each image */
+.slideshow img:nth-child(1) { animation-delay: 0s; }
+.slideshow img:nth-child(2) { animation-delay: 5s; }
+.slideshow img:nth-child(3) { animation-delay: 10s; }
+.slideshow img:nth-child(4) { animation-delay: 15s; }
+.slideshow img:nth-child(5) { animation-delay: 20s; }
+
+/* Animation loop fix */
+@keyframes slideShow {
+  0%   { opacity: 0; transform: translateX(-100%); }
+  10%  { opacity: 1; transform: translateX(0); }
+  30%  { opacity: 1; transform: translateX(0); }
+  40%  { opacity: 0; transform: translateX(100%); }
+  100% { opacity: 0; transform: translateX(100%); } /* ensures smooth loop */
+}
+
+
+/* BRAND (side) */
+.brand {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1;
+}
+.brand__logo {
+  width: 60px;
+}
+.brand__text {
+  display: flex;
+  flex-direction: column;
+}
+.brand__name {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--blue);
+}
+.brand__tagline {
+  font-size: 14px;
+  color: var(--dark);
+}
+
+/* LOGIN CARD */
+.card {
+  position: relative;
+  z-index: 1;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  width: 400px; /* broader */
+  max-width: 90%;
+}
+
+.card__title {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: var(--dark);
+}
+.card__subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Social buttons */
+.btn--social {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f8faff;
+  cursor: pointer;
+}
+.btn--social:hover {
+  background: #eef5ff;
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  margin: 15px 0;
+  color: #999;
+  position: relative;
+}
+.divider span {
+  background: white;
+  padding: 0 8px;
+  position: relative;
+  z-index: 1;
+}
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #ddd;
+  z-index: 0;
+}
+
+/* Form fields */
+.field {
+  margin-bottom: 18px;
+  position: relative;
+}
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  outline: none;
+}
+.label {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background: white;
+  padding: 0 4px;
+  font-size: 12px;
+  color: #555;
+}
+
+/* Options */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.checkbox {
+  font-size: 14px;
+}
+
+/* Submit button */
+.btn--primary {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: var(--blue);
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn--primary:hover {
+  background: #164dcc;
+}
+
+/* Footer */
+.card__footer {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+.card__footer a {
+  color: var(--blue);
+  text-decoration: none;
+}
+.card__footer a:hover {
+  text-decoration: underline;
+}
